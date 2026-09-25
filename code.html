@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#2c303d", "tertiary-fixed": "#f0dbff", "inverse-surface": "#dfe2f3", "secondary": "#ddb8ff", "on-secondary-fixed-variant": "#62259b", "outline-variant": "#454653", "surface-container": "#1b1f2c", "on-primary-container": "#101b8a", "secondary-container": "#62259b", "on-tertiary": "#490080", "on-secondary": "#490081", "tertiary": "#ddb7ff", "surface": "#0f131f", "secondary-fixed": "#f0dbff", "on-primary-fixed": "#000767", "surface-container-high": "#262a37", "tertiary-container": "#ba74ff", "on-tertiary-container": "#46007a", "secondary-fixed-dim": "#ddb8ff", "outline": "#908f9e", "primary": "#bdc2ff", "error-container": "#93000a", "surface-tint": "#bdc2ff", "on-primary": "#131e8c", "primary-container": "#818cf8", "inverse-primary": "#4953bc", "background": "#0f131f", "surface-bright": "#353946", "on-surface-variant": "#c6c5d5", "on-surface": "#dfe2f3", "on-error-container": "#ffdad6", "error": "#ffb4ab", "on-error": "#690005", "on-tertiary-fixed": "#2c0051", "primary-fixed": "#e0e0ff", "surface-container-low": "#171b28", "on-tertiary-fixed-variant": "#6900b3", "surface-variant": "#313442", "surface-container-lowest": "#0a0e1a", "primary-fixed-dim": "#bdc2ff", "on-background": "#dfe2f3", "on-primary-fixed-variant": "#2f3aa3", "on-secondary-container": "#d1a1ff", "surface-dim": "#0f131f", "on-secondary-fixed": "#2c0051", "tertiary-fixed-dim": "#ddb7ff", "surface-container-highest": "#313442" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "space-lg": "2rem", "margin-sm": "1.25rem", "space-md": "1.25rem", "space-sm": "0.75rem", "space-xl": "3.5rem", "space-xs": "0.375rem", "margin": "3rem", "gutter": "1.5rem" }, "fontFamily": { "headline-sm": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"] }, "fontSize": { "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }], "display-lg": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "300" }], "body-md": ["15px", { "lineHeight": "26px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-md": ["32px", { "lineHeight": "42px", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg-mobile": ["36px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body
+  class="bg-background font-body-md text-on-surface min-h-screen selection:bg-secondary-container selection:text-secondary-fixed relative">
+  <div
+    class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_50%_0%,rgba(189,194,255,0.08),rgba(15,19,31,0)_70%)]">
+  </div>
+  <header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 w-full px-gutter flex items-center justify-between">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-2 h-2 rounded-full bg-primary/70 animate-pulse"></div><span
+          class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Nightfall
+          Sanctuary</span>
+      </div>
+      <nav
+        class="hidden md:flex items-center gap-space-xs p-1 bg-surface-container-low/50 backdrop-blur-md rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+        data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-full"><a
+          aria-current="page"
+          class="px-space-sm py-1 transition-colors bg-primary-container text-on-primary-container font-medium rounded-full"
+          data-path="apology-canvas" href="#">Prologue</a><a
+          class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors"
+          data-path="reflection-memories" href="#">Memories</a><a
+          class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors"
+          data-path="vows-and-amends" href="#">The Vow</a><a
+          class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface px-space-sm py-1 transition-colors"
+          data-path="unspoken-thoughts" href="#">Unspoken</a></nav>
+      <div class="flex items-center gap-space-md">
+        <div
+          class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-surface-container-low/60 backdrop-blur-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+          <span class="material-symbols-outlined text-outline text-[18px]">volume_off</span><span
+            class="hidden sm:inline font-label-sm text-label-sm text-on-surface-variant">Rain &amp; Piano</span>
+          <div class="flex items-end gap-[2px] h-3 px-1"><span
+              class="w-[2px] h-1.5 bg-outline rounded-full"></span><span
+              class="w-[2px] h-3 bg-outline rounded-full"></span><span
+              class="w-[2px] h-2 bg-outline rounded-full"></span></div>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-16 bg-surface relative z-10">
+    <div class="flex flex-col w-full relative overflow-hidden text-on-surface">
+      <!-- Living Celestial Background Canvas & Cosmic Layers -->
+      <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <!-- Deep Indigo / Midnight Atmospheric Gradients -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#060814] via-surface-container-lowest to-surface opacity-95">
+        </div>
+        <div
+          class="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[850px] bg-[radial-gradient(circle_at_center,rgba(189,194,255,0.14)_0%,rgba(139,92,246,0.06)_40%,transparent_75%)] blur-3xl transition-opacity duration-1000"
+          id="celestial-nebula"></div>
+        <div
+          class="absolute top-1/3 -right-40 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(221,183,255,0.08)_0%,transparent_70%)] blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-1/4 -left-40 w-[550px] h-[550px] bg-[radial-gradient(circle_at_center,rgba(129,140,248,0.09)_0%,transparent_70%)] blur-3xl">
+        </div>
+        <!-- Interactive Parallax Moon -->
+        <div
+          class="absolute top-12 left-1/2 -translate-x-1/2 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full transition-transform duration-300 ease-out will-change-transform"
+          id="parallax-moon">
+          <!-- Outer Diffuse Halo -->
+          <div
+            class="absolute -inset-10 sm:-inset-16 rounded-full bg-[radial-gradient(circle,rgba(224,224,255,0.22)_0%,rgba(189,194,255,0.08)_45%,transparent_75%)] transition-all duration-1000 blur-2xl"
+            id="moon-halo"></div>
+          <!-- Hyper-realistic Luminous Moon Body -->
+          <div
+            class="relative w-full h-full rounded-full shadow-[inset_-25px_-20px_50px_rgba(15,19,31,0.9),inset_15px_15px_35px_rgba(255,255,255,0.9),0_0_80px_rgba(189,194,255,0.35)] bg-gradient-to-br from-[#f8f9ff] via-[#d6dbf5] to-[#8d94b8] overflow-hidden">
+            <!-- SVG Crater Map and Lunar Textures -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-35 mix-blend-multiply pointer-events-none animate-[spin_60s_linear_infinite]"
+              preserveaspectratio="none" viewbox="0 0 400 400">
+              <circle cx="130" cy="110" fill="#585e82" filter="blur(2px)" r="38"></circle>
+              <circle cx="270" cy="160" fill="#4d5377" filter="blur(3px)" r="48"></circle>
+              <circle cx="210" cy="90" fill="#5c6288" filter="blur(2px)" r="24"></circle>
+              <circle cx="95" cy="240" fill="#4a5073" filter="blur(4px)" r="54"></circle>
+              <circle cx="230" cy="265" fill="#50567a" filter="blur(2px)" r="42"></circle>
+              <circle cx="310" cy="290" fill="#5e648c" filter="blur(2px)" r="28"></circle>
+              <circle cx="160" cy="320" fill="#52587c" filter="blur(3px)" r="32"></circle>
+              <path d="M70,180 Q140,210 200,170 T350,220" fill="none" filter="blur(6px)" opacity="0.3" stroke="#484e72"
+                stroke-width="26"></path>
+              <path d="M120,70 Q210,130 300,80" fill="none" filter="blur(7px)" opacity="0.25" stroke="#44496d"
+                stroke-width="32"></path>
+            </svg>
+            <!-- Specular Moon Rim Rim-Light -->
+            <div
+              class="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-white/40 mix-blend-overlay">
+            </div>
+          </div>
+        </div>
+        <!-- Starfield Particles (Dynamic CSS twinkling) -->
+        <div class="absolute inset-0 opacity-80">
+          <span
+            class="absolute top-[8%] left-[12%] w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_#ffffff] animate-ping opacity-75"
+            style="animation-duration: 4s;"></span>
+          <span
+            class="absolute top-[18%] left-[82%] w-1 h-1 bg-primary rounded-full shadow-[0_0_6px_#bdc2ff] animate-pulse"
+            style="animation-duration: 3s;"></span>
+          <span
+            class="absolute top-[28%] left-[22%] w-2 h-2 bg-secondary-fixed rounded-full shadow-[0_0_10px_#f0dbff] animate-pulse"
+            style="animation-duration: 5s;"></span>
+          <span class="absolute top-[35%] right-[15%] w-1 h-1 bg-white rounded-full opacity-60"></span>
+          <span
+            class="absolute top-[48%] left-[6%] w-1.5 h-1.5 bg-primary-fixed rounded-full shadow-[0_0_8px_#e0e0ff] animate-ping"
+            style="animation-duration: 6s;"></span>
+          <span
+            class="absolute top-[58%] right-[8%] w-2 h-2 bg-tertiary-fixed rounded-full shadow-[0_0_10px_#ddb7ff] animate-pulse"
+            style="animation-duration: 4.5s;"></span>
+          <span class="absolute top-[72%] left-[18%] w-1 h-1 bg-white rounded-full opacity-70 animate-pulse"></span>
+          <span
+            class="absolute top-[85%] right-[25%] w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_6px_#bdc2ff] animate-ping"
+            style="animation-duration: 5.5s;"></span>
+        </div>
+        <!-- Drifting Ethereal Cloud Layers -->
+        <div
+          class="absolute top-28 -left-32 w-[650px] h-40 bg-gradient-to-r from-transparent via-surface-container-high/20 to-transparent blur-3xl opacity-60 transform -rotate-6 animate-pulse"
+          style="animation-duration: 9s;"></div>
+        <div
+          class="absolute top-64 -right-32 w-[750px] h-48 bg-gradient-to-r from-transparent via-primary-container/10 to-transparent blur-3xl opacity-50 transform rotate-3 animate-pulse"
+          style="animation-duration: 12s;"></div>
+      </div>
+      <!-- Content Stream Container -->
+      <div class="relative z-10 w-full flex flex-col items-center px-4 sm:px-gutter">
+        <!-- Top Section: Recipient Dedication -->
+        <section
+          class="min-h-[82vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center max-w-3xl pt-8 pb-16">
+          <!-- Subtle Lunar Motif Badge -->
+          <div
+            class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high/60 backdrop-blur-md shadow-md shadow-black/20 mb-space-lg group transition-all duration-300 hover:bg-surface-container-highest/80">
+            <span class="material-symbols-outlined text-secondary text-[16px] animate-spin"
+              style="animation-duration: 20s;">arrow_back_ios_new</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Written Beneath
+              The Midnight Sky</span>
+            <span class="material-symbols-outlined text-secondary text-[16px]">bedtime</span>
+          </div>
+          <!-- Recipient Customization Badge / Editable Name -->
+          <div class="flex flex-col items-center gap-1.5 mb-space-md">
+            <div class="flex items-center gap-space-xs text-secondary-fixed">
+              <span class="font-body-sm text-body-sm text-outline tracking-widest uppercase">To:</span>
+              <div class="relative group">
+                <span
+                  class="font-headline-md text-headline-md italic tracking-wide px-2 py-0.5 rounded outline-none text-white font-semibold drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)]"
+                  id="recipient-name">Nivi</span>
+              </div>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant italic opacity-85">For the person I never wanted
+              to hurt...</p>
+          </div>
+          <!-- Grand Title & Emotionally Resonant Opening -->
+          <div class="mt-space-sm space-y-space-md">
+            <h1
+              class="font-display-lg text-display-lg tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-primary-fixed to-secondary drop-shadow-[0_4px_24px_rgba(189,194,255,0.3)]">
+              I’m Sorry...
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface max-w-xl mx-auto leading-relaxed font-light opacity-90">
+              Sometimes a simple “sorry” isn’t enough, but I hope these words can carry the weight of how deeply and
+              truly I mean it.
+            </p>
+          </div>
+          <!-- Poetic Scroll Cue -->
+          <a class="mt-space-xl flex flex-col items-center gap-space-xs text-outline-variant hover:text-primary transition-colors group cursor-pointer"
+            href="#apology-card">
+            <span
+              class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">Scroll
+              to read my heart</span>
+            <div
+              class="w-6 h-10 rounded-full bg-surface-container-low/60 flex items-start justify-center p-1.5 shadow-inner shadow-black/40">
+              <span class="w-1.5 h-2.5 bg-primary rounded-full animate-bounce"></span>
+            </div>
+          </a>
+        </section>
+        <!-- Visual Divider: Atmospheric Starlight Compass -->
+        <div class="w-full max-w-2xl flex items-center justify-center gap-space-md py-space-lg opacity-40">
+          <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline to-transparent"></div>
+          <span class="material-symbols-outlined text-primary text-[20px]">lens_blur</span>
+          <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-outline to-transparent"></div>
+        </div>
+        <!-- Central Apology Glassmorphism Section -->
+        <section class="w-full max-w-3xl my-space-xl scroll-mt-24" id="apology-card">
+          <div
+            class="relative rounded-3xl bg-surface-container-low/75 backdrop-blur-2xl p-6 sm:p-10 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7),0_0_35px_rgba(189,194,255,0.08)] transition-all duration-700 hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.8),0_0_50px_rgba(189,194,255,0.15)] overflow-hidden hover:scale-[1.02] hover:-translate-y-2">
+            <!-- Subtle Lunar Highlight Sheen across top edge -->
+            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+            </div>
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <!-- Header of the Letter -->
+            <div class="flex items-center justify-between gap-4 pb-space-lg mb-space-md">
+              <div class="flex items-center gap-space-sm">
+                <div
+                  class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary shadow-[0_0_15px_rgba(221,184,255,0.25)]">
+                  <span class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: 'FILL' 1;">favorite</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-on-surface block">From The Quiet Hours</span>
+                  <span class="font-label-sm text-label-sm text-outline">Unfiltered &amp; Sincere</span>
+                </div>
+              </div>
+              <div
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/60 text-outline-variant font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[14px]">edit_note</span>
+                <span class="hidden sm:inline">Click letter to edit</span>
+              </div>
+            </div>
+            <!-- Editable Heartfelt Letter Body -->
+            <div
+              class="font-body-lg text-body-lg text-on-surface leading-loose space-y-space-md outline-none focus:ring-1 focus:ring-primary/40 p-2 sm:p-4 rounded-xl transition-all"
+              contenteditable="true" id="apology-text-body" spellcheck="false">
+              <p>
+                I have sat with my silence for hours beneath this quiet sky, thinking about what went wrong. When I
+                replay what happened, I see so clearly where I failed you: in my haste, in my thoughtlessness, and in
+                failing to hold your feelings with the delicate care they have always deserved.
+              </p>
+              <p>
+                You didn’t deserve to feel unheard or hurt. You have brought nothing but warmth, patience, and honesty
+                into my life, and the realization that my actions cast a shadow over that is something that weighs
+                heavily on me tonight.
+              </p>
+              <p>
+                I am not offering excuses. I am holding myself accountable. I am taking this time not just to say I am
+                sorry, but to actively change how I listen, how I react, and how I protect the trust we built together.
+                Even if it takes time to heal, I will be here—patient, grateful, and learning.
+              </p>
+            </div>
+            <!-- Handwritten Sign-off -->
+            <div
+              class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+              <div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+                <span class="material-symbols-outlined text-primary text-[18px]">lock_reset</span>
+                <span>With genuine remorse &amp; all my sincerity</span>
+              </div>
+              <div class="font-headline-sm text-headline-sm italic text-secondary-fixed">
+                Always yours, faithfully.
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Visual Anchor: Ambient Quote Section Header -->
+        <div class="w-full max-w-4xl text-center mt-space-xl mb-space-lg">
+          <div
+            class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container/60 mb-space-xs">
+            <span class="material-symbols-outlined text-primary text-[16px]">format_quote</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Reflections In
+              Moonlight</span>
+          </div>
+          <h2 class="font-headline-md text-headline-md text-on-surface">Things I Want You To Know</h2>
+        </div>
+        <!-- 4 Graceful Quote Cards Grid (Staggered Bento Presentation) -->
+        <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-space-md my-space-sm">
+          <!-- Quote Card 1 -->
+          <div
+            class="quote-card opacity-0 translate-y-8 transition-all duration-700 relative rounded-2xl bg-surface-container/60 backdrop-blur-xl p-space-lg shadow-lg shadow-black/20 hover:shadow-[0_10px_30px_rgba(189,194,255,0.12)] hover:-translate-y-1 group flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-space-md">
+              <span class="font-display-lg text-display-lg text-primary/30 leading-none select-none -mb-6">“</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">auto_awesome</span>
+            </div>
+            <p class="font-headline-sm text-headline-sm text-on-surface italic font-normal leading-relaxed my-space-sm">
+              I’m sorry for the moments when my words hurt more than I realized.
+            </p>
+            <div class="mt-space-md flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+              <span class="w-2 h-[1px] bg-primary"></span>
+              <span>Acknowledging the unintentional weight</span>
+            </div>
+          </div>
+          <!-- Quote Card 2 -->
+          <div
+            class="quote-card opacity-0 translate-y-8 transition-all duration-700 delay-100 relative rounded-2xl bg-surface-container/60 backdrop-blur-xl p-space-lg shadow-lg shadow-black/20 hover:shadow-[0_10px_30px_rgba(221,184,255,0.12)] hover:-translate-y-1 group flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-space-md">
+              <span class="font-display-lg text-display-lg text-secondary/30 leading-none select-none -mb-6">“</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors text-[20px]">psychology_alt</span>
+            </div>
+            <p class="font-headline-sm text-headline-sm text-on-surface italic font-normal leading-relaxed my-space-sm">
+              I can’t change what happened, but I can promise to learn from it.
+            </p>
+            <div class="mt-space-md flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+              <span class="w-2 h-[1px] bg-secondary"></span>
+              <span>Commitment to real, observable growth</span>
+            </div>
+          </div>
+          <!-- Quote Card 3 -->
+          <div
+            class="quote-card opacity-0 translate-y-8 transition-all duration-700 delay-200 relative rounded-2xl bg-surface-container/60 backdrop-blur-xl p-space-lg shadow-lg shadow-black/20 hover:shadow-[0_10px_30px_rgba(189,194,255,0.12)] hover:-translate-y-1 group flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-space-md">
+              <span class="font-display-lg text-display-lg text-primary/30 leading-none select-none -mb-6">“</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">favorite_border</span>
+            </div>
+            <p class="font-headline-sm text-headline-sm text-on-surface italic font-normal leading-relaxed my-space-sm">
+              Some people mean too much to lose over one mistake.
+            </p>
+            <div class="mt-space-md flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+              <span class="w-2 h-[1px] bg-primary"></span>
+              <span>Because your presence is irreplaceable</span>
+            </div>
+          </div>
+          <!-- Quote Card 4 -->
+          <div
+            class="quote-card opacity-0 translate-y-8 transition-all duration-700 delay-300 relative rounded-2xl bg-surface-container/60 backdrop-blur-xl p-space-lg shadow-lg shadow-black/20 hover:shadow-[0_10px_30px_rgba(221,184,255,0.12)] hover:-translate-y-1 group flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-space-md">
+              <span class="font-display-lg text-display-lg text-secondary/30 leading-none select-none -mb-6">“</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors text-[20px]">hearing</span>
+            </div>
+            <p class="font-headline-sm text-headline-sm text-on-surface italic font-normal leading-relaxed my-space-sm">
+              If I could go back, I’d choose understanding before words.
+            </p>
+            <div class="mt-space-md flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+              <span class="w-2 h-[1px] bg-secondary"></span>
+              <span>Listening with an open, humbled heart</span>
+            </div>
+          </div>
+        </div>
+        <!-- Final Section: Interactive Forgiveness & Closure -->
+        <section class="w-full max-w-2xl my-space-xl pb-space-xl flex flex-col items-center text-center">
+          <div
+            class="relative rounded-3xl bg-surface-container-high/40 backdrop-blur-2xl p-8 sm:p-12 w-full shadow-2xl shadow-black/40">
+            <div
+              class="w-14 h-14 mx-auto rounded-full bg-surface-container-highest/80 flex items-center justify-center text-secondary shadow-[0_0_20px_rgba(221,184,255,0.2)] mb-space-md">
+              <span class="material-symbols-outlined text-[28px]">nights_stay</span>
+            </div>
+            <span class="font-label-md text-label-md text-primary uppercase tracking-widest block mb-space-xs">The Final
+              Thought</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">One More Thing...</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-lg mx-auto mb-space-lg leading-relaxed">
+              I don’t expect everything to dissolve in an instant. All I ask for is a small spark of grace—a chance to
+              show you that my care and devotion are real. Take whatever time you need. Whenever you are ready, I am
+              here.
+            </p>
+            <!-- Interactive Forgiveness Trigger Button Area -->
+            <div class="flex flex-col items-center gap-space-md" id="forgiveness-interactive-container">
+              <button
+                class="relative group px-10 py-4 rounded-full bg-gradient-to-r from-primary-container via-indigo-500 to-tertiary-container text-white font-label-md text-label-md uppercase tracking-widest shadow-[0_0_30px_rgba(129,140,248,0.45)] hover:shadow-[0_0_45px_rgba(221,184,255,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden"
+                id="forgive-btn" type="button">
+                <span class="relative z-10 flex items-center gap-space-xs">
+                  <span>Forgive Me?</span>
+                  <span
+                    class="material-symbols-outlined text-[18px] transition-transform group-hover:scale-125">volunteer_activism</span>
+                </span>
+                <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+              <!-- Dynamic Reveal Target Card (Initially Hidden) -->
+              <div
+                class="hidden w-full max-w-md p-space-md rounded-2xl bg-surface-container-highest/90 backdrop-blur-xl shadow-[0_0_40px_rgba(189,194,255,0.3)] transform transition-all duration-700 scale-95 opacity-0"
+                id="forgiveness-response">
+                <div class="flex items-center justify-center gap-2 text-secondary mb-2 animate-bounce">
+                  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                  <span class="material-symbols-outlined text-primary text-[28px]"
+                    style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                </div>
+                <p class="font-headline-sm text-headline-sm text-white italic">
+                  Thank you for hearing me.
+                </p>
+                <p class="font-body-md text-body-md text-tertiary-fixed mt-1">
+                  ❤️ My heart is with you, always.
+                </p>
+                <div
+                  class="mt-space-sm pt-space-xs flex justify-center items-center gap-2 text-outline-variant font-label-sm text-label-sm">
+                  <span class="material-symbols-outlined text-[14px]">done_all</span>
+                  <span>A new chapter begins in patience.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Popup and Effects -->
+      <div id="forgive-popup"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-500">
+        <div
+          class="bg-surface-container/90 border border-outline/30 p-8 rounded-3xl shadow-[0_0_50px_rgba(189,194,255,0.2)] text-center max-w-sm w-full mx-4 transform scale-95 transition-transform duration-500 flex flex-col gap-6">
+          <h3 class="font-headline-md text-headline-md text-on-surface">Did you forgave me or not?</h3>
+          <div class="flex gap-4 justify-center">
+            <button
+              class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md hover:bg-primary/90 hover:scale-105 transition-all"
+              onclick="triggerForgive()">Yes</button>
+            <button
+              class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md hover:bg-primary/90 hover:scale-105 transition-all"
+              onclick="triggerForgive()">Yes</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="heart-explosion-container"
+        class="fixed inset-0 z-[110] pointer-events-none hidden items-center justify-center overflow-hidden">
+        <div id="heart-center" class="text-error text-9xl transform scale-0 transition-transform duration-300">❤️</div>
+      </div>
+
+      <div id="floating-texts" class="fixed inset-0 z-[105] pointer-events-none overflow-hidden hidden"></div>
+
+      <script>
+        setTimeout(() => {
+          const popup = document.getElementById('forgive-popup');
+          popup.classList.remove('hidden');
+          popup.classList.add('flex');
+          setTimeout(() => {
+            popup.classList.remove('opacity-0');
+            popup.querySelector('div').classList.remove('scale-95');
+            popup.querySelector('div').classList.add('scale-100');
+          }, 50);
+        }, 10000);
+
+        window.triggerForgive = () => {
+          const popup = document.getElementById('forgive-popup');
+          popup.classList.add('opacity-0');
+          setTimeout(() => {
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+          }, 500);
+
+          const explosionContainer = document.getElementById('heart-explosion-container');
+          const heart = document.getElementById('heart-center');
+          explosionContainer.classList.remove('hidden');
+          explosionContainer.classList.add('flex');
+
+          setTimeout(() => {
+            heart.style.transform = 'scale(5)';
+            setTimeout(() => {
+              heart.style.transform = 'scale(0)';
+              heart.style.opacity = '0';
+              for (let i = 0; i < 30; i++) {
+                let particle = document.createElement('div');
+                particle.innerHTML = '❤️';
+                particle.className = 'absolute text-4xl transition-all duration-1000 ease-out';
+                particle.style.left = '50%';
+                particle.style.top = '50%';
+                let angle = Math.random() * Math.PI * 2;
+                let dist = 100 + Math.random() * 300;
+                particle.style.transform = `translate(-50%, -50%)`;
+                explosionContainer.appendChild(particle);
+                setTimeout(() => {
+                  particle.style.transform = `translate(calc(-50% + ${Math.cos(angle) * dist}px), calc(-50% + ${Math.sin(angle) * dist}px)) scale(${Math.random()})`;
+                  particle.style.opacity = '0';
+                }, 50);
+              }
+            }, 300);
+          }, 50);
+
+          const textsContainer = document.getElementById('floating-texts');
+          textsContainer.classList.remove('hidden');
+
+          const sorryText = document.createElement('div');
+          sorryText.innerHTML = 'Sorry';
+          sorryText.className = 'absolute text-6xl font-headline-lg text-primary/80 animate-[floatRight_4s_linear_infinite] whitespace-nowrap';
+          sorryText.style.top = '80%';
+          sorryText.style.left = '-20%';
+
+          const niviText = document.createElement('div');
+          niviText.innerHTML = 'Nivi';
+          niviText.className = 'absolute text-6xl font-headline-lg text-secondary/80 animate-[floatLeft_4s_linear_infinite] whitespace-nowrap';
+          niviText.style.top = '85%';
+          niviText.style.right = '-20%';
+
+          textsContainer.appendChild(sorryText);
+          textsContainer.appendChild(niviText);
+
+          const style = document.createElement('style');
+          style.innerHTML = `
+    @keyframes floatRight {
+      0% { transform: translateX(0vw) rotate(-5deg); }
+      50% { transform: translateX(60vw) rotate(5deg) translateY(-20px); }
+      100% { transform: translateX(120vw) rotate(-5deg); }
+    }
+    @keyframes floatLeft {
+      0% { transform: translateX(0vw) rotate(5deg); }
+      50% { transform: translateX(-60vw) rotate(-5deg) translateY(20px); }
+      100% { transform: translateX(-120vw) rotate(5deg); }
+    }
+  `;
+          document.head.appendChild(style);
+        };
+      </script>
+      <!-- Client Interaction Logic & Audio Ambient Synthesis -->
+      <script>
+        (() => {
+          // 1. Smooth Parallax & Moon Halo Reactive Scroll
+          const moonEl = document.getElementById('parallax-moon');
+          const moonHalo = document.getElementById('moon-halo');
+          const apologySection = document.getElementById('apology-card');
+
+          window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            if (moonEl) {
+              // Subtle horizontal drift and vertical dampening
+              const translateY = scrolled * 0.28;
+              const translateX = Math.sin(scrolled * 0.002) * 20;
+              moonEl.style.transform = `translate(calc(-50% + ${translateX}px), ${translateY}px)`;
+            }
+
+            // Check proximity to Apology Card for Moon Halo enhancement
+            if (apologySection && moonHalo) {
+              const rect = apologySection.getBoundingClientRect();
+              if (rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0) {
+                moonHalo.classList.add('bg-[radial-gradient(circle,rgba(221,184,255,0.45)_0%,rgba(189,194,255,0.22)_45%,transparent_80%)]');
+                moonHalo.style.transform = 'scale(1.2)';
+              } else {
+                moonHalo.classList.remove('bg-[radial-gradient(circle,rgba(221,184,255,0.45)_0%,rgba(189,194,255,0.22)_45%,transparent_80%)]');
+                moonHalo.style.transform = 'scale(1)';
+              }
+            }
+          }, { passive: true });
+
+          // 2. Intersection Observer for Quote Cards Fade-in
+          const quoteCards = document.querySelectorAll('.quote-card');
+          const quoteObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                quoteObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15 });
+
+          quoteCards.forEach(card => quoteObserver.observe(card));
+
+          // 3. Forgiveness Button Interaction
+          const forgiveBtn = document.getElementById('forgive-btn');
+          const forgivenessResponse = document.getElementById('forgiveness-response');
+
+          if (forgiveBtn && forgivenessResponse) {
+            forgiveBtn.addEventListener('click', () => {
+              forgiveBtn.classList.add('scale-95', 'opacity-0');
+              setTimeout(() => {
+                forgiveBtn.classList.add('hidden');
+                forgivenessResponse.classList.remove('hidden');
+                // Trigger transition
+                requestAnimationFrame(() => {
+                  forgivenessResponse.classList.remove('scale-95', 'opacity-0');
+                  forgivenessResponse.classList.add('scale-100', 'opacity-100');
+                });
+              }, 250);
+            });
+          }
+
+          // 4. Client Web Audio API (Piano & Rain Night Breeze Synthesizer)
+          let audioCtx = null;
+          let isPlaying = false;
+          let noiseNode = null;
+          let chordInterval = null;
+
+          const setupAudio = () => {
+            if (!audioCtx) {
+              audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+          };
+
+          const startSoundscape = () => {
+            setupAudio();
+            if (audioCtx.state === 'suspended') {
+              audioCtx.resume();
+            }
+
+            // Night Breeze Pink Noise
+            const bufferSize = audioCtx.sampleRate * 2;
+            const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const output = noiseBuffer.getChannelData(0);
+            let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+            for (let i = 0; i < bufferSize; i++) {
+              const white = Math.random() * 2 - 1;
+              b0 = 0.99886 * b0 + white * 0.0555179;
+              b1 = 0.99332 * b1 + white * 0.0750759;
+              b2 = 0.96900 * b2 + white * 0.1538520;
+              b3 = 0.86650 * b3 + white * 0.3104856;
+              b4 = 0.55000 * b4 + white * 0.5329522;
+              b5 = -0.7616 * b5 - white * 0.0168980;
+              output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.04;
+              b6 = white * 0.115926;
+            }
+
+            noiseNode = audioCtx.createBufferSource();
+            noiseNode.buffer = noiseBuffer;
+            noiseNode.loop = true;
+
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(380, audioCtx.currentTime);
+
+            const gainNode = audioCtx.createGain();
+            gainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 3);
+
+            noiseNode.connect(filter);
+            filter.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            noiseNode.start();
+
+            // Delicate Ambient Piano / Chimes (Pentatonic Eb / G / Bb / C / F)
+            const notes = [155.56, 196.00, 233.08, 261.63, 311.13, 392.00, 466.16];
+            const playSoftChime = () => {
+              if (!isPlaying || !audioCtx) return;
+              const osc = audioCtx.createOscillator();
+              const oscGain = audioCtx.createGain();
+              const noteFreq = notes[Math.floor(Math.random() * notes.length)];
+
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(noteFreq, audioCtx.currentTime);
+
+              oscGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+              oscGain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 0.4);
+              oscGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 3.8);
+
+              osc.connect(oscGain);
+              oscGain.connect(audioCtx.destination);
+
+              osc.start();
+              osc.stop(audioCtx.currentTime + 4.0);
+            };
+
+            playSoftChime();
+            chordInterval = setInterval(playSoftChime, 3200);
+            isPlaying = true;
+          };
+
+          const stopSoundscape = () => {
+            if (noiseNode) {
+              try { noiseNode.stop(); } catch (e) { }
+              noiseNode = null;
+            }
+            if (chordInterval) {
+              clearInterval(chordInterval);
+              chordInterval = null;
+            }
+            isPlaying = false;
+          };
+
+          // Header Audio Button hook if present in global shell
+          const shellAudioBtn = document.querySelector('header .cursor-pointer');
+          if (shellAudioBtn) {
+            shellAudioBtn.addEventListener('click', () => {
+              const icon = shellAudioBtn.querySelector('.material-symbols-outlined');
+              if (!isPlaying) {
+                startSoundscape();
+                if (icon) icon.textContent = 'volume_up';
+                shellAudioBtn.classList.add('bg-primary/20');
+              } else {
+                stopSoundscape();
+                if (icon) icon.textContent = 'volume_off';
+                shellAudioBtn.classList.remove('bg-primary/20');
+              }
+            });
+          }
+        })();
+      </script>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-lowest/80 backdrop-blur-md py-space-lg relative z-10">
+    <div class="w-full px-gutter flex flex-col md:flex-row items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-space-sm"><span
+          class="material-symbols-outlined text-primary text-[20px]">nightlight</span><span
+          class="font-body-sm text-body-sm text-on-surface-variant">Forged in quiet contemplation under
+          starlight.</span></div>
+      <div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-outline">Take your time.
+          There is no rush.</span></div>
+    </div>
+  </footer>
+</body>
+
+</html>
